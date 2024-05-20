@@ -1,4 +1,4 @@
---altura da árvore
+--Altura da Árvore
 data Tree t = Node t (Tree t) (Tree t) 
               | Nilt
               deriving (Read)
