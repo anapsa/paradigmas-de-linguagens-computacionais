@@ -1,3 +1,4 @@
+--Multiplicação de Listas
 addZero::[Int] -> [Int]
 addZero [] = []
 addZero (x:xs) = 0 : addZero xs
