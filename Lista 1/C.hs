@@ -1,4 +1,4 @@
-
+--HexaToBin
 dtob :: Char -> String
 dtob '0' = "0000"
 dtob  '1' = "0001"
