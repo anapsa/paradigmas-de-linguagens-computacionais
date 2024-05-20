@@ -1,3 +1,4 @@
+--Mova à Direita!
 addEspacos :: Int -> String
 addEspacos 0 = ""
 addEspacos n = " " ++ addEspacos (n-1)
