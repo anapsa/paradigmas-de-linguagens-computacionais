@@ -1,3 +1,4 @@
+--Lista de Novos Alunos
 bSort :: [String] -> [String]
 bSort [] = []
 bSort (x:xs) = bSort[a | a <- xs, a < x]  ++ [x] ++ bSort[a | a <- xs, a >= x] 
