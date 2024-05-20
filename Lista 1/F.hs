@@ -1,3 +1,4 @@
+--Estatísticas da Fatura do Cartão
 minMaxCartao :: String -> (Double, Double)
 minMaxCartao fatura = resultado
     where
