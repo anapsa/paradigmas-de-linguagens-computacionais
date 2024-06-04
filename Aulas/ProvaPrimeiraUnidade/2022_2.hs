@@ -1,5 +1,3 @@
-
-
 -- 2) (4.0) Escreva duas funções que que fazem esse mesmo processo para
 --qualquer sequência de letras. Assuma que a lista não possui números, apenas
 --letras, e que no máximo as letras se repetem 9 vezes. Se a letra não é seguida
