@@ -1,6 +1,6 @@
 --Suavização de Dados
 suaviza :: [Float] -> [Float]
-suaviza x = aux x True 0 0 --haskell
+suaviza x = aux x True 0 0 
     where 
         aux [] _ x y = [] 
         aux(x:[]) True somar y = x : aux [] False x y
