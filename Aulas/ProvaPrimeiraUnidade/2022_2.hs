@@ -35,3 +35,28 @@ replicaLetras (x:xs) letra
 rldecodeLetras :: String -> String
 rldecodeLetras x = replicaLetras x ' '
  
+-- 3) (2.0) Dado um tipo de dados que representa letras únicas ou letras repetidas:
+
+data Letra = Unica Char | Repetida Char Int
+    deriving Show
+
+contaLetras1 :: String -> Char -> Int -> [Letra] 
+contaLetras1 [] letra 0 = [(Unica letra)]
+contaLetras1 [] letra contador = [(Repetida letra contador)]
+contaLetras1 (x:xs) letra contador 
+    | letra == ' ' = contaLetras1 xs x 0 
+    | x == letra = contaLetras1 xs x (contador+1) 
+    | contador /= 0 = [(Repetida letra (contador+1))] ++ contaLetras1 xs x 0 
+    | otherwise = [(Unica letra)] ++ contaLetras1 xs x 0 
+    
+rlencodeLetrasCodigo :: String -> [Letra]
+rlencodeLetrasCodigo x = contaLetras1 x ' ' 0
+
+rldecodeLetrasCodigo :: [Letra] -> String
+rldecodeLetrasCodigo x = replicaLetras1 x 
+
+replicaLetras1 :: [Letra] -> String 
+replicaLetras1 [] = []
+replicaLetras1 ((Unica x):xs) = x : replicaLetras1 xs 
+replicaLetras1 ((Repetida x num):xs) = (replicate num x) ++ replicaLetras1 xs
+
